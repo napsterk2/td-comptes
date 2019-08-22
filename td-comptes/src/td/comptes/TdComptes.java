@@ -15,7 +15,17 @@ public class TdComptes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO code application logic hereo
+      Comptes cp = new ComptesCourant(5000,1, 8000);
+      
+      Comptes cp2 = new ComptesEpargne(5.5, 2, 150000);
+      
+      cp.verser(45000);
+      
+        System.out.println(" le solde de cp est "+cp.consulterSolde());
+      
+      
+      
     }
     
 }
