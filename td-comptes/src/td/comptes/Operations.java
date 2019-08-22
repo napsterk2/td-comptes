@@ -39,7 +39,8 @@ public class Operations {
         return dateoperations;
     }
 
-    public void setDateoperations(Date dateoperations) {
+    public void setDateoperations(Date dateoperations) 
+    {
         this.dateoperations = dateoperations;
     }
 
@@ -47,7 +48,8 @@ public class Operations {
         return montant;
     }
 
-    public void setMontant(double montant) {
+    public void setMontant(double montant) 
+    {
         this.montant = montant;
     }
     

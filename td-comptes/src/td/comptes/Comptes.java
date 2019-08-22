@@ -15,11 +15,11 @@ import java.util.List;
  */
 public abstract class Comptes {
     
-    private int code; 
+    protected int code; 
     
-    private double solde; 
+    protected double solde; 
     
-    private List<Operations> operations = new ArrayList<>();
+    protected List<Operations> operations = new ArrayList<>();
 
     public Comptes() {
     }
@@ -54,8 +54,35 @@ public abstract class Comptes {
     public abstract void updateSolde(); // methode qui permet de mettre à jour le compte! la mise a jour se fait differemment en fonction de a nature du Compte
     
     public List<Operations> getOperation()
-    
-    {
+    // cette methode va permettre de prendre la main sur les operations dans une mesure de performance des systemes d'information decisionnelle
+    { 
         return operations;
     }
+    public double totalVersement()
+    {
+        double somme = 0;
+        
+        for (Operations o: operations)
+        {
+             if (o instanceof Versement)
+                 somme = somme+o.getMontant(); // methode qui permet de calculer le total des versements 
+        }
+        
+        return somme;
+    }
+    
+     public double totalRetrait()
+    {
+        double somme = 0;
+        
+        for (Operations o: operations)
+        {
+             if (o instanceof Retrait)
+                 somme = somme+o.getMontant(); 
+        }
+        
+        // creation de la methode qui permet de calculer le total des retraits 
+        return somme;
+    }
 }
+// 
